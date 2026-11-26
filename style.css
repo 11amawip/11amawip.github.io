@@ -198,6 +198,8 @@ a { color: inherit; }
 .app--nawabari   { --accent: #7FD3FF; }
 .app--suberidase { --accent: #5EE3D0; }
 .app--chanbara   { --accent: #FF6B5B; }
+.app--honey      { --accent: #FFC83D; }
+.app--honey .app__name { white-space: normal; }  /* 英語名が長い */
 .app--kirikae    { --accent: #9BE15D; }
 
 /* ---------- 下 ---------- */
@@ -260,4 +262,21 @@ a { color: inherit; }
   .app__name { font-size: 17px; white-space: normal; }
   .store { white-space: normal; font-size: 15px; padding: 12px 16px; }
   .soon { font-size: 14px; padding: 10px 14px; }
+}
+
+/* ---------- スマホで札を畳む（JS が html.js を付けたときだけ） ---------- */
+.app__more { display: none; }
+@media (max-width: 760px) {
+  html.js .app__more {
+    display: inline-flex; align-items: center; gap: 8px; margin: 14px auto 0; padding: 10px 18px;
+    border-radius: 999px; border: 2px solid var(--accent); background: transparent; color: var(--accent);
+    font: inherit; font-weight: 800; font-size: 14px; cursor: pointer; width: 100%; justify-content: center;
+  }
+  html.js .app__more::after { content: "▾"; transition: transform .25s; }
+  html.js .app.is-open .app__more::after { transform: rotate(180deg); }
+  html.js .app:not(.is-open) .app__feat, html.js .app:not(.is-open) .phones { display: none; }
+  html.js .app:not(.is-open) .app__num { display: none; }  /* 畳んだ札では番号がボタンに重なる */
+  html.js .app.is-open .phones { margin-top: 18px; }
+  html.js .app { padding-bottom: 22px; }
+  html.js .app__feat { margin-top: 18px; }
 }

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Llama-san (@11amawip) — Indie iPhone Games</title>
-<meta name="description" content="Indie iPhone games by Llama-san (@11amawip): Penguin Territory, Slide Out, Penguin! and Flick Chanbara. All free to play.">
+<meta name="description" content="Indie iPhone games by Llama-san (@11amawip): Penguin Territory, Slide Out, Penguin!, Flick Chanbara, Mitsuwake Honeycomb and Switch Express. All free to play.">
 <meta name="theme-color" content="#2F86F0">
 <link rel="icon" href="../img/avatar.png">
 <link rel="apple-touch-icon" href="../img/avatar.png">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://11amawip.github.io/en/">
 <meta property="og:title" content="Llama-san — Indie iPhone Games">
-<meta property="og:description" content="A hex logic puzzle, an ice-sliding escape puzzle and a flick-to-slash sword duel. All free.">
+<meta property="og:description" content="A hex logic puzzle, an ice-sliding escape puzzle, a flick-to-slash sword duel a honey-splitting puzzle and a train-switching runner. All free.">
 <meta property="og:image" content="https://11amawip.github.io/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@11amawip">
@@ -47,9 +47,9 @@
     <div>
       <span class="eyebrow">INDIE GAME DEV · @11amawip</span>
       <h1><small>work-in-progress</small>Llama-san</h1>
-      <p class="lead">I make iPhone games on my own.<br><span>Think. Slide. Slash. Ride.</span> All free to play.</p>
+      <p class="lead">I make iPhone games on my own.<br><span>Think. Slide. Slash. Split. Ride.</span> All free to play.</p>
       <ul class="stats">
-        <li>3 GAMES + 1 SOON</li><li>FREE TO PLAY</li><li>iPhone</li>
+        <li>5 GAMES</li><li>FREE TO PLAY</li><li>iPhone</li>
       </ul>
       <a class="cta" href="#games">See the games <span class="arrow">↓</span></a>
     </div>
@@ -58,8 +58,8 @@
 
 <div class="band"><div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>Penguin Territory</span><span>Slide Out, Penguin!</span><span>Flick Chanbara</span><span>Switch Express</span>
-    <span>Penguin Territory</span><span>Slide Out, Penguin!</span><span>Flick Chanbara</span><span>Switch Express</span>
+    <span>Penguin Territory</span><span>Slide Out, Penguin!</span><span>Flick Chanbara</span><span>Mitsuwake Honeycomb</span><span>Switch Express</span>
+    <span>Penguin Territory</span><span>Slide Out, Penguin!</span><span>Flick Chanbara</span><span>Mitsuwake Honeycomb</span><span>Switch Express</span>
   </div>
 </div></div>
 
@@ -130,6 +130,27 @@
     <span class="app__num" aria-hidden="true">03</span>
   </article>
 
+  <article class="app app--honey">
+    <div class="app__text">
+      <div class="app__head">
+        <img class="app__icon" src="../img/honey-icon.png" alt="" width="256" height="256">
+        <div><h3 class="app__name">Mitsuwake Honeycomb</h3><p class="app__genre">Honey-splitting hex puzzle · Japanese only for now</p></div>
+      </div>
+      <p class="app__catch">Thick honey.<br><em>Split it just right.</em></p>
+      <ul class="app__feat">
+        <li>Honey splits in half at every cell. Place lids to change its path</li>
+        <li>Match every jar's number exactly and the bees cheer</li>
+        <li>500 stages, plus a new daily puzzle</li>
+      </ul>
+      <a class="store" href="https://apps.apple.com/app/id6838942822" rel="noopener">Free on the App Store <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="phones">
+      <div class="phone phone--a"><img src="../img/honey-02-pour-twin.jpg" alt="Mitsuwake Honeycomb board with two spouts" loading="lazy"></div>
+      <div class="phone phone--b"><img src="../img/honey-05-crack.jpg" alt="A hive with cracked walls" loading="lazy"></div>
+    </div>
+    <span class="app__num" aria-hidden="true">04</span>
+  </article>
+
   <article class="app app--kirikae">
     <div class="app__text">
       <div class="app__head">
@@ -142,13 +163,13 @@
         <li>Magnet, Star and Autopilot items</li>
         <li>8 locomotives and cargo wagons to load up</li>
       </ul>
-      <span class="soon">Coming soon (in review)</span>
+      <a class="store" href="https://apps.apple.com/app/id6838373254" rel="noopener">Free on the App Store <span aria-hidden="true">→</span></a>
     </div>
     <div class="phones">
       <div class="phone phone--a"><img src="../img/kirikae-en-2-play.jpg" alt="Switch Express gameplay" loading="lazy"></div>
       <div class="phone phone--b"><img src="../img/kirikae-en-6-space.jpg" alt="A train in outer space" loading="lazy"></div>
     </div>
-    <span class="app__num" aria-hidden="true">04</span>
+    <span class="app__num" aria-hidden="true">05</span>
   </article>
 </main>
 
@@ -160,5 +181,20 @@
   <p class="copy">© 2026 Llama-san (@11amawip)</p>
 </footer>
 
+<script>
+// スマホでは各アプリの説明と画面写真を畳み、「Details & screens」で開く（JS が無いときは全部見える）
+document.documentElement.classList.add('js');
+document.querySelectorAll('.app').forEach(function (a) {
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'app__more'; b.textContent = 'Details & screens';
+  b.setAttribute('aria-expanded', 'false');
+  b.addEventListener('click', function () {
+    var open = a.classList.toggle('is-open');
+    b.textContent = open ? 'Close' : 'Details & screens';
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  a.querySelector('.app__text').appendChild(b);
+});
+</script>
 </body>
 </html>
